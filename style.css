@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+/* Styling header */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding shadow effect */
+    position: fixed;
+    width: 100%;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    z-index: 100;
+}
+
+/* Header background change when in context section */
+header.bg-change {
+    background-color: black; /* New background color */
+    color: #ffffff; /* New font color */
+}
+header.bg-change ul.header-content li,
+header.bg-change .search i,
+header.bg-change .content img {
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 80px; /* Adjust height as needed */
+}
+
+.content img{
+    padding-top: 8px;
+}
+
+.content img {
+    width: 75px; /* Adjust according to your logo size */
+}
+
+.header-content {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+}
+
+.header-content li {
+    margin-right: 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.header-content li.active:hover {
+    font-size: 24px;
+    transition: font-size 0.3s ease; /* Optional: Smooth transition */
+}
+
+
+.search {
+    cursor: pointer;
+}
+
+/* Styling search icon */
+.search i {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #000; /* Ensure it has a color that contrasts with the background */
+}
+
+.hero-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    height: 100vh;
+    
+}
+
+.hero-text-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.hero-text h1 {
+    font-size: 8vw;
+    line-height: 1;
+    font-weight: 700;
+    background-color: #f4d03f;
+    background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.hero-text h2{
+    font-size: 5vw;
+    color: #fff;
+    display: inline-flex;
+}
+.hero-text input{
+    font-size: 3rem;
+    color: white;
+    border-radius: 2rem;
+    padding: 10px 20px;
+   display: flex;
+   align-items: center;
+background: linear-gradient(90deg, rgba(18,156,75,1) 0%, rgba(133,33,175,1) 45%, rgba(222,53,161,1) 94%);
+}
+
+
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 60px;
+    color: #16a085;
+}
+.footer-wrapper{
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-nav{
+    display: flex;
+    align-items: center;
+}
+.footer-nav li + li{
+    margin-left: 16px;
+}
+.footer-nav li a{
+    color: #16a085;
+    font-size: 18px;
+}
+
+.cursor{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-radius: 50%;
+    border: 2px solid #16a085;
+    transition: transform .3s ease;
+    transform-origin: center center;
+    pointer-events: none;
+    z-index: 1000;
+    background: #fff;
+    mix-blend-mode: difference;
+    border: none;
+}
+
+.grow, .grow-small{
+    transform: scale(5);
+    background: #fff;
+    mix-blend-mode: difference;
+    border: none;
+}
+.grow-small{
+    transform: scale(2.5);
+}
+
+.context {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.context-text-content {
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    text-align: center;
+    width: 90%;
+    height: 80vh;
+    gap: 5rem;
+}
+
+.context-desc h1{
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 4rem;
+    font-size: 1.5rem; /* Increase the size of the icons here */
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f89c12;
+}
+
+.cursor-scale {
+    cursor: pointer;
+}
+
+@keyframes floatMovement {
+0%, 100% {
+  transform: translateY(0);
+  
+}
+50% {
+  transform: translateY(-20px);
+}
+}
+
+/* Apply the animation to the image */
+#animatedImg {
+animation: floatMovement 3s ease-in-out infinite; /* Adjust animation duration and timing */
+}
