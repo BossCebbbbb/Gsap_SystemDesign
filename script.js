@@ -35,19 +35,55 @@ cursorScale.forEach(link => {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
+    const hero = document.querySelector('.hero-context');
     const contextSection = document.querySelector('.context');
+    const certSection = document.querySelector('.cert');
 
-    const observer = new IntersectionObserver((entries) => {
+    const observerConfig = {
+        threshold: 0.8 // Adjust the threshold as needed
+    };
+
+    const handleIntersection = (entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.target === hero && entry.isIntersecting) {
+                header.classList.add('bg-change-white');
+                header.classList.remove('bg-change');
+            }else if (entry.target === contextSection && entry.isIntersecting) {
                 header.classList.add('bg-change');
-            } else {
+                header.classList.remove('bg-change-white');
+            } else if (entry.target === certSection && entry.isIntersecting) {
+                header.classList.add('bg-change-white');
                 header.classList.remove('bg-change');
             }
         });
-    }, { threshold: 0.9 });
+    };
 
+    const observer = new IntersectionObserver(handleIntersection, observerConfig);
+
+    observer.observe(hero);
     observer.observe(contextSection);
+    observer.observe(certSection);
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    function toggleForm(form) {
+        document.getElementById('loginForm').style.display = form === 'login' ? 'flex' : 'none';
+        document.getElementById('registerForm').style.display = form === 'register' ? 'flex' : 'none';
+    }
+
+    // Initialize to hide both forms initially
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'none';
+
+    // Expose the function to the global scope
+    window.toggleForm = toggleForm;
 });

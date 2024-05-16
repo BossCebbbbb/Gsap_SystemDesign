@@ -29,6 +29,22 @@ header.bg-change .content img {
     color: #ffffff;
 }
 
+header.bg-change-white {
+    background-color:#ffffff; 
+    color: #000000;
+}
+header.bg-change-white ul.header-content li,
+header.bg-change-white .search i,
+header.bg-change-white .content img {
+    color: #000000;
+}
+header.bg-change .Btn input[type="button"]{
+    background-color: #ffffff; /* Black background for the buttons */
+    color: #000000; /* White text */
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -65,15 +81,38 @@ header.bg-change .content img {
 }
 
 
-.search {
+
+.Btn input[type="button"] {
+    background-color: #000; /* Black background for the buttons */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-/* Styling search icon */
-.search i {
-    font-size: 24px; /* Adjust the size as needed */
-    color: #000; /* Ensure it has a color that contrasts with the background */
-}
+
+/* .hero-text span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgb(255, 255, 255, 0.1),
+    0 0 0 8px rgb(255, 255, 255, 0.1),
+    0 0 20px rgb(255, 255, 255, 1);
+    z-index: 100;
+} */
+
+
+
+
+
+
 
 .hero-text {
     width: 100%;
@@ -118,7 +157,7 @@ background: linear-gradient(90deg, rgba(18,156,75,1) 0%, rgba(133,33,175,1) 45%,
 
 
 
-.footer{
+/* .footer{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -142,7 +181,7 @@ background: linear-gradient(90deg, rgba(18,156,75,1) 0%, rgba(133,33,175,1) 45%,
 .footer-nav li a{
     color: #16a085;
     font-size: 18px;
-}
+} */
 
 .cursor{
     position: fixed;
@@ -231,4 +270,247 @@ background: linear-gradient(90deg, rgba(18,156,75,1) 0%, rgba(133,33,175,1) 45%,
 /* Apply the animation to the image */
 #animatedImg {
 animation: floatMovement 3s ease-in-out infinite; /* Adjust animation duration and timing */
+}
+
+
+
+.cert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    padding: 20px;
+    height: 100vh; /* Adjust as needed */
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 225px;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+
+.box {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+
+}
+
+
+
+/* .box:hover{
+    animation-play-state: paused;
+} */
+
+
+@keyframes animate {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 36deg)) translateZ(450px);
+    -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, rgba(4, 4, 4, 0.267));
+}
+
+
+
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+
+}
+
+img:hover{
+    transform: translateY(-2px);
+    
+}
+
+
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101; /* Ensure it is above other elements */
+}
+
+.form-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    position: relative; /* Added for positioning the close button */
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 10px;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+}
+.close-btn:hover{
+    background-color: transparent;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+
+.form-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-footer a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.form-footer a:hover {
+    color: #333;
+}
+
+/* Footer styles */
+/* footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+} */
+
+/* .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    gap: 5rem;
+    width: 100%;    
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+}
+
+.footer-content h1,
+.footer-content p {
+    margin-left: 20px; /* Add some left margin for spacing */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center social icons horizontally */
+    margin-top: 10px; /* Adjust margin for spacing */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Adjust margin between social icons */
 }

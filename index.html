@@ -26,23 +26,74 @@
                 <li>Favorite</li>
                 <li>Setting</li>
             </ul>
-            <div class="search">
-                <i class='bx bx-search'></i>
+            <div class="Btn">
+                <input type="button" value="Login" onclick="toggleForm('login')">
+                <input type="button" value="Register" onclick="toggleForm('register')">
             </div>
         </div>
+        
     </header>
+
+
+    <div class="form-container" id="loginForm">
+        <div class="form-box">
+            <button class="close-btn" onclick="toggleForm()">X</button>
+            <h2>Login</h2>
+            <form>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-container" id="registerForm">
+        <div class="form-box">
+            <button class="close-btn" onclick="toggleForm()">X</button>
+            <h2>Register</h2>
+            <form>
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Register</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <section class="hero-text">
         <div class="hero-text-content">
             <div class="hero-context">
-            <h1 class="cursor-scale">Boss Ceeeeeb!!!!!</h1>
-            <h2 class="cursor-scale small">Animation</h2>
-            <input type="button" class="cursor-scale small animate-border" value="Subscribe">
+                <h1 class="cursor-scale">Boss Ceeeeeb!!!!!</h1>
+                <h2 class="cursor-scale small">Animation</h2>
+                <input type="button" class="cursor-scale small animate-border" value="Subscribe">
+            </div>
+            <div class="clipart cursor-scale">
+                <img id="animatedImg" src="img/clip.png" alt="">
+            </div>
         </div>
-        <div class="clipart cursor-scale">
-            <img id="animatedImg" src="img/clip.png" alt="">
-        </div>
-    </div>
+    <div id="starfield"></div>
     </section>
 
     <section class="context">
@@ -59,12 +110,44 @@
                 <a href="" target="_blank" class="cursor-scale small"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
-    </div>
+    </div>  
+    </section>
     
-        
+    <section class="cert">
+        <div class="title">
+            <h1>Carousell</h1>
+        </div>
+        <div class="box">
+            
+            <span style="--i:1"><img src="img/clip.png"></span>
+            <span style="--i:2"><img src="img/clip.png"></span>
+            <span style="--i:3"><img src="img/clip.png"></span>
+            <span style="--i:4"><img src="img/clip.png"></span>
+            <span style="--i:5"><img src="img/clip.png"></span>
+            <span style="--i:6"><img src="img/clip.png"></span>
+            <span style="--i:7"><img src="img/clip.png"></span>
+            <span style="--i:8"><img src="img/clip.png"></span>
+            <span style="--i:9"><img src="img/clip.png"></span>
+            <span style="--i:10"><img src="img/clip.png"></span>
+
+    
+        </div>
     </section>
 
-
+    <footer class="foot">
+        <div class="footer-container">
+            <h2>Boss Ceeeeb</h2>
+            <p>Address: Bataan</p>
+          
+        </div>
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="mailto:example@gmail.com"><i class="fas fa-envelope"></i></a>
+            
+        </div>
+    </footer>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 
